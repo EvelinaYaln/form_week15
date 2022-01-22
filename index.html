@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изучение JavaScript</title>
+    <link href="styles/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <form>
+        <h2>Забронировать апартаменты</h2>
+        <p class="middle-text">Напишите, в какие дни вы хотите к нам приехать, и запланируйте отдых в Парк-отеле</p>
+        <label class="font-size-big" for="userEmail">E-mail</label>
+        <input class="border" type="email" name="email" id="userEmail" placeholder="Ваш e-mail">
+        <label class="font-size-big" for="userName">Имя</label>
+        <input class="border" type="text" name="name" id="userName" placeholder="Ваше полное имя">
+        <p class="font-size-big">Выберите тип апартаментов:</p>
+        <div><input type="radio" name="type-of-apartments" id="hotel" value="Отель" checked>
+            <label class="font-size-small" for="hotel">Отель</label></div>
+        <div><input type="radio" name="type-of-apartments" id="cottage" value="Коттедж">
+            <label class="font-size-small" for="cottage">Коттедж</label></div>
+        <div><input type="radio" name="type-of-apartments" id="taunhouse" value="Таунхаус">
+            <label class="font-size-small" for="taunhouse">Таунхаус</label></div>
+        <input class="font-size-small" type="submit" id="userto-book" value="Забронировать апартаменты">
+    </form>
+
+    <script src="js/index.js">
+    </script>
+</body>
+
+</html>
