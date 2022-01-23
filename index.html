@@ -13,22 +13,18 @@
 <body>
     <form>
         <h2>Создайте аккаунт</h2>
+
+        <label class="font-size-big" for="userName">Имя</label>
+        <input class="border" type="text" name="name" id="userName" placeholder="Ваше полное имя">
+        <label class="font-size-big" for="userSecondName">Фамилия</label>
+        <input class="border" type="text" name="secondName" id="userSecondName" placeholder="Ваша фамилия">
         <label class="font-size-big" for="userEmail">E-mail</label>
         <input class="border" type="email" name="email" id="userEmail" placeholder="Ваш e-mail">
-        <label class="font-size-big" for="userName">Имя</label>
-        <input class="border" type="text" name="name" id="userName" placeholder="Ваше полное имя">
-        <label class="font-size-big" for="userName">Имя</label>
-        <input class="border" type="text" name="name" id="userName" placeholder="Ваше полное имя">
         <label class="font-size-big" for="userPassword">Пароль</label>
         <input class="border" type="password" name="password" id="userPassword" placeholder="Ваш пароль">
-        <p class="font-size-big">Выберите тип апартаментов:</p>
-        <div><input type="radio" name="type-of-apartments" id="hotel" value="Отель" checked>
-            <label class="font-size-small" for="hotel">Отель</label></div>
-        <div><input type="radio" name="type-of-apartments" id="cottage" value="Коттедж">
-            <label class="font-size-small" for="cottage">Коттедж</label></div>
-        <div><input type="radio" name="type-of-apartments" id="taunhouse" value="Таунхаус">
-            <label class="font-size-small" for="taunhouse">Таунхаус</label></div>
-        <input class="font-size-small" type="submit" id="userto-book" value="Зарегистрироваться">
+        <label class="font-size-big" for="showPassword" id="labelForCheckbox"> <input type="checkbox" id="showPassword">Показать пароль</label>
+        <div id="errorMessage"></div>
+        <input class="font-size-small" id="userto-register" type="submit" value="Зарегистрироваться" onclick="check()">
     </form>
 
     <script src="js/index.js">
