@@ -8,9 +8,6 @@ check = () => {
     if (secondName === '') {
         document.getElementById('errorMessage').innerHTML += 'Введите вашу фамилию<br>';
     }
-    if (name !== '' && secondName !== '') {
-        document.getElementById('errorMessage').innerHTML += `Добро пожаловать, ${name + secondName}<br>`;
-    }
     let email = document.getElementById('userEmail').value;
     if (email === '') {
         document.getElementById('errorMessage').innerHTML += 'Введите ваш e-mail<br>';
@@ -21,5 +18,8 @@ check = () => {
     }
     if (password !== '' && password.length <= 8) {
         document.getElementById('errorMessage').innerHTML += 'Пароль слишком короткий<br>';
+    }
+    if (name !== '' && secondName !== '' && email !== '' && password !== '' && password.length >= 8) {
+        document.getElementById('errorMessage').innerHTML += `Добро пожаловать, ${name + secondName}<br>`;
     }
 }
