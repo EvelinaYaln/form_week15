@@ -11,20 +11,21 @@
 </head>
 
 <body>
-    <form>
+    <form nonvalidate>
         <h2>Создайте аккаунт</h2>
 
-        <label class="font-size-big" for="userName">Имя</label>
-        <input class="border" type="text" name="name" id="userName" placeholder="Ваше полное имя">
-        <label class="font-size-big" for="userSecondName">Фамилия</label>
-        <input class="border" type="text" name="secondName" id="userSecondName" placeholder="Ваша фамилия">
-        <label class="font-size-big" for="userEmail">E-mail</label>
-        <input class="border" type="email" name="email" id="userEmail" placeholder="Ваш e-mail">
-        <label class="font-size-big" for="userPassword">Пароль</label>
-        <input class="border" type="password" name="password" id="userPassword" placeholder="Ваш пароль">
+        <label class="font-size-big" for="userName">Имя</label> *
+        <input class="border" type="text" name="name" id="userName" placeholder="Ваше полное имя" required>
+        <label class="font-size-big" for="userSecondName">Фамилия</label> *
+        <input class="border" type="text" name="secondName" id="userSecondName" placeholder="Ваша фамилия" required>
+        <label class="font-size-big" for="userEmail">E-mail</label> *
+        <input class="border" type="email" name="email" id="userEmail" placeholder="Ваш e-mail" required>
+        <label class="font-size-big" for="userPassword">Пароль</label> *
+        <input class="border" type="password" name="password" id="userPassword" placeholder="Ваш пароль" pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/" required>
         <label class="font-size-big" for="showPassword" id="labelForCheckbox"> <input type="checkbox" id="showPassword">Показать пароль</label>
+        <p>* - поле, обязательное для заполнения</p>
         <div id="errorMessage"></div>
-        <input class="font-size-small" id="userto-register" type="button" value="Зарегистрироваться" onclick="check()">
+        <input class="font-size-small" id="register" type="button" value="Зарегистрироваться">
     </form>
 
     <script src="js/index.js">

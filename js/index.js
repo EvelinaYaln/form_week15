@@ -1,4 +1,4 @@
-check = () => {
+/*check = () => {
     document.getElementById('errorMessage').innerHTML = '';
     let name = document.getElementById('userName').value;
     if (name === '') {
@@ -22,4 +22,41 @@ check = () => {
     if (name !== '' && secondName !== '' && email !== '' && password !== '' && password.length >= 8) {
         document.getElementById('errorMessage').innerHTML += `Добро пожаловать, ${name + secondName}<br>`;
     }
+}*/
+let errors = [];
+let checkValidity = (input) => {
+    let validity = input.validity;
+    if (validity.valueMissing) {
+        errors.push('Поле ' + input.placeholder + ' не заполнено');
+    }
+    if (validity.patternMismatch) {
+        errors.push('Неверный формат заполенения поля ' + input.placeholder);
+    }
+    if (validity.rangeOverflow) {
+        errors.push('Максимальное значение не может быть больше, чем' + max);
+    }
+    if (validity.rangeUnderflow) {
+        errors.push('Минимальное значение не может быть меньше, чем' + min);
+    }
+    if (validity.tooLong) {
+        errors.push('Значение не может быть длиннее, чем' + maxlength);
+    }
+    if (validity.tooShort) {
+        errors.push('Значение не может быть короче, чем' + minlength);
+    }
+    if (validity.typeMismatch) {
+        errors.push('Значение не соответствует формату');
+    }
+
 }
+
+let checkAll = () => {
+    errors = [];
+    let inputs = document.querySelectorAll('input');
+    for (let input of inputs) {
+        checkValidity(input);
+    }
+    document.querySelector('#errorMessage').innerHTML = errors.join('.<br>');
+
+}
+register.addEventListener('click', checkAll);

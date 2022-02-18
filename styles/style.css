@@ -10,7 +10,7 @@ html {
 
 body {
     font-family: Roboto, Arial, sans-serif;
-    text-align: center;
+    /*text-align: center;*/
     background-color: #F5F5F5;
     ;
 }
@@ -35,7 +35,6 @@ form .middle-text {
 }
 
 label.font-size-big {
-    display: block;
     text-align: left;
 }
 
@@ -50,6 +49,7 @@ input.border {
     margin-bottom: 25px;
     height: 60px;
     padding-left: 35px;
+    margin-top: 20px;
 }
 
 form div,
@@ -129,5 +129,9 @@ input.font-size-small:hover {
 #errorMessage {
     color: red;
     text-align: center;
+    margin: 20px 0px 20px;
+}
+
+#showPassword {
     margin-bottom: 20px;
 }
