@@ -60,3 +60,22 @@ let checkAll = () => {
 
 }
 register.addEventListener('click', checkAll);
+register.addEventListener('click', function(event) {
+    event.preventDefault();
+    let user = {
+        nameUser: document.getElementById('userName').value,
+        nameSec: document.getElementById('userSecondName').value,
+        email: document.getElementById('userEmail').value,
+        password: document.getElementById('userPassword').value,
+    }
+    fetch('https://httpbin.org/post', {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-type': 'application/json; charset=utf-8'
+            }
+        })
+        .then(response => response.json())
+        .then(user => console.log(user))
+        .catch(error => console.log(error))
+});
